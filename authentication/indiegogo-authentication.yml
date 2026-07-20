@@ -1,0 +1,39 @@
+generated: '2026-07-19'
+method: searched
+source: https://help.indiegogo.com/article/616-indiegogo-public-api
+docs: https://help.indiegogo.com/category/617-developer-resources
+summary:
+  types: [none]
+  api_key_in: []
+  oauth2_flows: []
+  note: >-
+    The current Indiegogo Public API (https://www.indiegogo.com/api/public/*) is
+    read-only and requires NO authentication; all endpoints are open and results
+    are cached for a short duration. A separate, legacy Partner/Campaign API
+    (api.indiegogo.com/:version/) historically used an application api_token plus
+    an optional per-user access_token; that host now returns 403 / redirects and
+    is treated as deprecated.
+schemes:
+  - name: public
+    type: none
+    description: >-
+      Public endpoints are unauthenticated. No API key, token, or OAuth flow is
+      required to call the creators or projects public endpoints.
+    sources: [openapi/indiegogo-public-openapi.yml]
+legacy:
+  - name: api_token
+    type: apiKey
+    in: query
+    parameter: api_token
+    status: deprecated
+    description: >-
+      Application-level token on the legacy Partner API (api.indiegogo.com), e.g.
+      /1/campaigns/{id}.json?api_token={token}. Host now 403/redirects.
+  - name: access_token
+    type: apiKey
+    in: query
+    parameter: access_token
+    status: deprecated
+    description: >-
+      Optional per-user (campaign creator / team member) token on the legacy
+      Partner API that unlocked privileged campaign data. Never expose in HTML.
