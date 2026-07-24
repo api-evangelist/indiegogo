@@ -1,0 +1,116 @@
+openapi: 3.1.0
+info:
+  title: Indiegogo Public Creators Projects API
+  version: '1.0'
+  description: The Indiegogo Public API exposes read-only, unauthenticated endpoints for retrieving creators and active crowdfunding projects from the Indiegogo platform. Responses are cached for a short duration. This specification was harvested by the API Evangelist enrichment pipeline directly from the live endpoints at https://www.indiegogo.com/api/public and the published documentation at https://help.indiegogo.com/article/616-indiegogo-public-api; schemas reflect real observed responses.
+  contact:
+    name: Indiegogo Developer Resources
+    url: https://help.indiegogo.com/category/617-developer-resources
+  termsOfService: https://www.indiegogo.com/about/terms
+servers:
+- url: https://www.indiegogo.com
+  description: Production
+tags:
+- name: Projects
+paths:
+  /api/public/projects/getActiveCrowdfundingProjects:
+    get:
+      operationId: getActiveCrowdfundingProjects
+      summary: List active crowdfunding projects
+      description: Retrieves a list of active crowdfunding projects, ordered by campaign start date. Results are cached for a short duration.
+      tags:
+      - Projects
+      responses:
+        '200':
+          description: An array of active crowdfunding projects.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Project'
+  /api/public/projects/getCrowdfundingProject:
+    get:
+      operationId: getCrowdfundingProject
+      summary: Get a crowdfunding project by URL name
+      description: Retrieves a single crowdfunding project by its unique URL name.
+      tags:
+      - Projects
+      parameters:
+      - name: urlName
+        in: query
+        required: true
+        description: The unique URL name of the project (e.g. olive--lemon).
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Project found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+        '400':
+          description: The urlName parameter was not provided or was invalid.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Project:
+      type: object
+      description: A crowdfunding project (campaign) on Indiegogo.
+      properties:
+        projectName:
+          type: string
+        projectUrlName:
+          type: string
+        shortDescription:
+          type: string
+        projectType:
+          type: integer
+          description: Numeric project type code.
+        projectHomeUrl:
+          type: string
+          format: uri
+        projectImageUrl:
+          type: string
+          format: uri
+        creatorName:
+          type: string
+        creatorUrlName:
+          type: string
+        campaignGoal:
+          type: number
+        fundsGathered:
+          type: number
+        currencyShortName:
+          type: string
+          description: ISO currency code (e.g. USD).
+        campaignStartDate:
+          type: string
+          format: date-time
+        campaignEndDate:
+          type: string
+          format: date-time
+        backerCount:
+          type: integer
+        rewardCount:
+          type: integer
+        commentCount:
+          type: integer
+        updateCount:
+          type: integer
+    Error:
+      type: object
+      description: Error envelope returned on a 400 response.
+      properties:
+        success:
+          type: boolean
+          example: false
+        message:
+          type: string
+      required:
+      - success
+      - message
