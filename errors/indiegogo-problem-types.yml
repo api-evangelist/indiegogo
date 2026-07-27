@@ -1,0 +1,26 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/indiegogo-public-openapi.yml
+format: envelope
+envelope:
+  description: >-
+    Errors are returned as a simple JSON envelope (NOT RFC 9457 problem+json).
+    The body carries a boolean success flag and a human-readable message.
+  fields:
+    success: boolean (false on error)
+    message: string (human-readable reason)
+  example:
+    success: false
+    message: URL name was not provided.
+problems:
+  - status: 400
+    title: Missing or invalid urlName
+    detail: The required urlName query parameter was not provided or did not match a record.
+    envelope_message: URL name was not provided.
+    content_type: application/json
+    source_operation: openapi/indiegogo-public-openapi.yml#getCreator
+  - status: 400
+    title: Missing or invalid urlName
+    detail: The required urlName query parameter was not provided or did not match a project.
+    content_type: application/json
+    source_operation: openapi/indiegogo-public-openapi.yml#getCrowdfundingProject

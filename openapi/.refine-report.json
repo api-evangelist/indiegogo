@@ -1,0 +1,16 @@
+{
+  "provider": "indiegogo",
+  "sources": [
+    "indiegogo-creators-api-openapi.yml",
+    "indiegogo-projects-api-openapi.yml"
+  ],
+  "outputs": [
+    "indiegogo-creators-api-openapi.yml",
+    "indiegogo-projects-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

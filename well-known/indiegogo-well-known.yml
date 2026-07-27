@@ -1,0 +1,29 @@
+generated: '2026-07-19'
+method: searched
+note: >-
+  Probed /.well-known/ discovery paths on the API and site hosts. No document
+  returned HTTP 200 (api.indiegogo.com 301-redirects all paths to the site root;
+  www.indiegogo.com returns 403 via bot protection). No files saved. Absence is a
+  valid, recorded result.
+hosts:
+  - host: https://www.indiegogo.com
+    documents:
+      - {path: /.well-known/security.txt, status: 403}
+      - {path: /.well-known/openid-configuration, status: 403}
+      - {path: /.well-known/oauth-authorization-server, status: 403}
+      - {path: /.well-known/api-catalog, status: 403}
+      - {path: /.well-known/ai-plugin.json, status: 403}
+  - host: https://api.indiegogo.com
+    documents:
+      - {path: /.well-known/security.txt, status: 301}
+      - {path: /.well-known/openid-configuration, status: 301}
+      - {path: /.well-known/oauth-authorization-server, status: 301}
+      - {path: /.well-known/api-catalog, status: 301}
+      - {path: /.well-known/ai-plugin.json, status: 301}
+  - host: https://developer.indiegogo.com
+    documents:
+      - {path: /.well-known/security.txt, status: 301}
+      - {path: /.well-known/openid-configuration, status: 301}
+      - {path: /.well-known/oauth-authorization-server, status: 301}
+      - {path: /.well-known/api-catalog, status: 301}
+      - {path: /.well-known/ai-plugin.json, status: 301}

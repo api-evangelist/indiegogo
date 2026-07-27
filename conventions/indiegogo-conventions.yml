@@ -1,0 +1,38 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/indiegogo-public-openapi.yml
+docs: https://help.indiegogo.com/article/616-indiegogo-public-api
+authentication:
+  style: none
+  note: Public read-only endpoints; no auth required. See authentication/indiegogo-authentication.yml
+idempotency:
+  supported: false
+  note: >-
+    The public API is entirely read-only (GET only), so idempotency keys are not
+    applicable and none are documented.
+pagination:
+  style: none
+  note: >-
+    getActiveCrowdfundingProjects returns a full array with no documented cursor,
+    offset, or page parameters.
+caching:
+  supported: true
+  note: All public endpoint results are cached for a short duration.
+identifiers:
+  resource_key: urlName
+  note: >-
+    Creators and projects are addressed by a human-readable urlName slug
+    (e.g. defne-mustecaplioglu, olive--lemon) rather than an opaque numeric id.
+error_envelope:
+  format: json
+  shape: '{ "success": false, "message": "..." }'
+  note: Not RFC 9457. See errors/indiegogo-problem-types.yml
+versioning:
+  scheme: none-on-public
+  note: >-
+    The public API path is unversioned. The legacy Partner API used a URI path
+    version segment (/1/, /2/) and is deprecated. See lifecycle/indiegogo-lifecycle.yml
+rate_limiting:
+  documented: false
+  note: No published rate-limit headers or quotas; short-duration caching is the
+    only stated throughput control.

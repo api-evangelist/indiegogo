@@ -1,0 +1,12 @@
+generated: '2026-07-19'
+method: generated
+source: openapi/indiegogo-public-openapi.yml
+skills:
+  - file: indiegogo-discover-projects.md
+    name: Discover active Indiegogo crowdfunding projects
+    api: openapi/indiegogo-public-openapi.yml
+    operations: [getActiveCrowdfundingProjects, getCrowdfundingProject]
+  - file: indiegogo-lookup-creator.md
+    name: Look up an Indiegogo creator
+    api: openapi/indiegogo-public-openapi.yml
+    operations: [getCreator]

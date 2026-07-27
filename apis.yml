@@ -1,9 +1,32 @@
 aid: indiegogo
 name: Indiegogo
-description: 'Indiegogo is a company surfaced as a portfolio company of insight-partners, ivp, kleiner-perkins,
-  version-one-ventures and added to the API Evangelist network as a stub for enrichment. Sector: consumer.
-  This profile is a lead awaiting the enrichment pipeline.'
+description: >-
+  Indiegogo is a global crowdfunding platform where entrepreneurs, inventors, and
+  creators raise money for products, creative works, and community projects
+  through campaigns backed by individual contributors. Founded in 2008, it is one
+  of the largest reward-based crowdfunding sites alongside Kickstarter, and it
+  also runs InDemand for ongoing post-campaign fundraising. For developers,
+  Indiegogo publishes a read-only Public API (https://www.indiegogo.com/api/public)
+  that returns creators and active crowdfunding projects without authentication,
+  with responses cached for a short duration. A separate, now-deprecated Partner
+  API (api.indiegogo.com) previously offered token-authenticated access to
+  campaign, perk, contribution, and comment data. This profile was seeded from
+  VC-portfolio sourcing and enriched by the API Evangelist pipeline against the
+  live public endpoints.
 url: https://raw.githubusercontent.com/api-evangelist/indiegogo/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://avatars.githubusercontent.com/u/889441?v=4
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -15,16 +38,101 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Consumer
-apis: []
+- Crowdfunding
+- Fundraising
+- Campaigns
+- Payments
+- Marketplace
+- Creators
+apis:
+- aid: indiegogo:indiegogo-creators-api
+  name: Indiegogo Creators API
+  description: The Creators API from Indiegogo — 1 operation(s) for creators.
+  humanURL: https://help.indiegogo.com/article/616-indiegogo-public-api
+  baseURL: https://www.indiegogo.com/api/public
+  tags:
+  - Creators
+  properties:
+  - type: OpenAPI
+    url: openapi/indiegogo-creators-api-openapi.yml
+  - type: Documentation
+    url: https://help.indiegogo.com/article/616-indiegogo-public-api
+  - type: APIReference
+    url: https://help.indiegogo.com/category/617-developer-resources
+- aid: indiegogo:indiegogo-projects-api
+  name: Indiegogo Projects API
+  description: The Projects API from Indiegogo — 2 operation(s) for projects.
+  humanURL: https://help.indiegogo.com/article/616-indiegogo-public-api
+  baseURL: https://www.indiegogo.com/api/public
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/indiegogo-projects-api-openapi.yml
+  - type: Documentation
+    url: https://help.indiegogo.com/article/616-indiegogo-public-api
+  - type: APIReference
+    url: https://help.indiegogo.com/category/617-developer-resources
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DeveloperPortal
+  url: https://help.indiegogo.com/category/617-developer-resources
+- type: Documentation
+  url: https://help.indiegogo.com/article/616-indiegogo-public-api
+- type: APIReference
+  url: https://help.indiegogo.com/category/617-developer-resources
+- type: Support
+  url: https://support.indiegogo.com/hc/en-us
+- type: Blog
+  url: https://www.indiegogo.com/en/blog
+- type: GitHubOrganization
+  url: https://github.com/indiegogo
+- type: Pricing
+  url: https://www.indiegogo.com/en/info/fees
+- type: SignUp
+  url: https://www.indiegogo.com/login
+- type: TermsOfService
+  url: https://www.indiegogo.com/about/terms
+- type: PrivacyPolicy
+  url: https://www.indiegogo.com/about/privacy
+- type: Authentication
+  url: authentication/indiegogo-authentication.yml
+- type: ErrorCatalog
+  url: errors/indiegogo-problem-types.yml
+- type: Conventions
+  url: conventions/indiegogo-conventions.yml
+- type: DataModel
+  url: data-model/indiegogo-data-model.yml
+- type: MCPServer
+  url: mcp/indiegogo-mcp.yml
+- type: Conformance
+  url: conformance/indiegogo-conformance.yml
+- type: Lifecycle
+  url: lifecycle/indiegogo-lifecycle.yml
+- type: WellKnown
+  url: well-known/indiegogo-well-known.yml
+- type: Packages
+  url: packages/indiegogo-packages.yml
+- type: LLMsTxt
+  url: llms/indiegogo-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: AgenticAccess
+  url: agentic-access/indiegogo-agentic-access.yml
+- type: DomainSecurity
+  url: security/indiegogo-domain-security.yml
 - type: Website
-  url: http://indiegogo.com/
+  url: https://www.indiegogo.com/
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

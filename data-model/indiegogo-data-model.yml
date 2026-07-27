@@ -1,0 +1,37 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/indiegogo-public-openapi.yml
+entities:
+  - name: Creator
+    key: urlName
+    description: A campaign creator on Indiegogo.
+    fields: [name, urlName, description, creatorPageUrl, thumbImageUrl]
+  - name: Project
+    key: projectUrlName
+    description: A crowdfunding project (campaign).
+    fields:
+      - projectName
+      - projectUrlName
+      - shortDescription
+      - projectType
+      - projectHomeUrl
+      - projectImageUrl
+      - creatorName
+      - creatorUrlName
+      - campaignGoal
+      - fundsGathered
+      - currencyShortName
+      - campaignStartDate
+      - campaignEndDate
+      - backerCount
+      - rewardCount
+      - commentCount
+      - updateCount
+relationships:
+  - from: Project
+    to: Creator
+    type: belongs_to
+    via: creatorUrlName
+    note: >-
+      A project denormalizes its creator via creatorName + creatorUrlName; the
+      creatorUrlName resolves against Creator.urlName (getCreator).

@@ -1,0 +1,19 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Indiegogo Public API
+  version: 1.0.0
+extends: openapi/indiegogo-public-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-enriched: true
+      x-apievangelist-method: searched-live
+      x-apievangelist-notes: >-
+        Spec harvested from live public endpoints; error envelope is a
+        success/message JSON object (not RFC 9457).
+  - target: $.paths['/api/public/projects/getActiveCrowdfundingProjects'].get
+    update:
+      x-apievangelist-cache: Results cached for a short duration server-side.
+  - target: $.components.schemas.Project
+    update:
+      x-apievangelist-primary-key: projectUrlName

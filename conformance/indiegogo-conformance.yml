@@ -1,0 +1,23 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/indiegogo-public-openapi.yml
+standards:
+  - id: openapi-3.1
+    conforms: true
+    evidence: Repo publishes an OpenAPI 3.1.0 description of the public API.
+  - id: oauth2
+    conforms: false
+    evidence: Public API is unauthenticated; no oauth2 securityScheme.
+  - id: oidc
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors use a {success,message} envelope, not application/problem+json.
+  - id: json-api
+    conforms: false
+  - id: pagination
+    conforms: false
+    evidence: No pagination parameters documented on list endpoint.
+  - id: idempotency
+    conforms: false
+    evidence: Read-only (GET) API; no idempotency contract.

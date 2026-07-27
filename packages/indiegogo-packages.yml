@@ -1,0 +1,20 @@
+generated: '2026-07-19'
+method: searched
+source: https://help.indiegogo.com/category/617-developer-resources
+note: >-
+  No first-party Indiegogo client SDK was found on npm, PyPI, RubyGems,
+  Packagist, Maven Central, NuGet, pkg.go.dev, or crates.io. Only community /
+  unofficial libraries exist (listed below with official: false). No SDKs
+  pointer is emitted because none are first-party.
+packages: []
+unofficial:
+  - language: php
+    registry: github
+    name: backerclub/indiegogo-api-client
+    url: https://github.com/backerclub/indiegogo-api-client
+    official: false
+  - language: php
+    registry: github
+    name: tiamo/indiegogo
+    url: https://github.com/tiamo/indiegogo
+    official: false

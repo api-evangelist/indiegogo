@@ -1,0 +1,25 @@
+generated: '2026-07-19'
+method: searched
+source: https://help.indiegogo.com/category/617-developer-resources
+versioning:
+  public_api:
+    scheme: unversioned
+    note: The public API path (/api/public/*) carries no version segment.
+  legacy_partner_api:
+    scheme: uri-path
+    versions: ['1', '2']
+    status: deprecated
+    note: >-
+      api.indiegogo.com/:version/ (e.g. /2/campaigns.json) is no longer reachable
+      (403/redirect) and is treated as retired.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: >-
+    No formal published deprecation policy or RFC 8594 Sunset/Deprecation header
+    support. The legacy Partner API was retired without a documented sunset page.
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+deprecated_operations: []
