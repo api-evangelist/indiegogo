@@ -83,6 +83,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Overlay
+  url: overlays/indiegogo-public-overlay.yaml
 - type: DeveloperPortal
   url: https://help.indiegogo.com/category/617-developer-resources
 - type: Documentation
