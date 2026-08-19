@@ -2,20 +2,25 @@ generated: '2026-07-19'
 method: derived
 status: candidate
 source: openapi/indiegogo-public-openapi.yml
-note: >-
-  No official hosted/remote Indiegogo MCP server was found (searched npm
-  @modelcontextprotocol, the MCP registry, and Indiegogo docs). This is a
-  candidate tool list derived one-to-one from the public OpenAPI operations.
+note: No official hosted/remote Indiegogo MCP server was found (searched npm @modelcontextprotocol, the
+  MCP registry, and Indiegogo docs). This is a candidate tool list derived one-to-one from the public
+  OpenAPI operations.
 server:
   name: indiegogo
   transport: http
 tools:
-  - name: get_creator
-    description: Retrieve an Indiegogo creator by their unique urlName.
-    source_operation: openapi/indiegogo-public-openapi.yml#getCreator
-  - name: list_active_crowdfunding_projects
-    description: List active crowdfunding projects ordered by campaign start date.
-    source_operation: openapi/indiegogo-public-openapi.yml#getActiveCrowdfundingProjects
-  - name: get_crowdfunding_project
-    description: Retrieve a single crowdfunding project by its unique urlName.
-    source_operation: openapi/indiegogo-public-openapi.yml#getCrowdfundingProject
+- name: get_creator
+  description: Retrieve an Indiegogo creator by their unique urlName.
+  source_operation: openapi/indiegogo-public-openapi.yml#getCreator
+- name: list_active_crowdfunding_projects
+  description: List active crowdfunding projects ordered by campaign start date.
+  source_operation: openapi/indiegogo-public-openapi.yml#getActiveCrowdfundingProjects
+- name: get_crowdfunding_project
+  description: Retrieve a single crowdfunding project by its unique urlName.
+  source_operation: openapi/indiegogo-public-openapi.yml#getCrowdfundingProject
+deployment:
+  mode: none
+  verified: derived
+  tools: 3
+  checked: '2026-08-12'
+  source: catalog MCP census

@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Indiegogo Public Creators Projects API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List active crowdfunding projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.indiegogo.com/api/public/projects/getActiveCrowdfundingProjects"
+          },
+          "docs": "Retrieves a list of active crowdfunding projects, ordered by campaign start date. Results are cached for a short duration."
+        },
+        {
+          "info": {
+            "name": "Get a crowdfunding project by URL name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.indiegogo.com/api/public/projects/getCrowdfundingProject",
+            "params": [
+              {
+                "name": "urlName",
+                "value": "",
+                "type": "query",
+                "description": "The unique URL name of the project (e.g. olive--lemon)."
+              }
+            ]
+          },
+          "docs": "Retrieves a single crowdfunding project by its unique URL name."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

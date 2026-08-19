@@ -1,0 +1,163 @@
+{
+  "item": [
+    {
+      "id": "54df2833-1139-4a48-97a2-5cd46db50d18",
+      "name": "Creators",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6db8df81-d402-4879-942a-173b7cf9a80a",
+          "name": "Get a creator by URL name",
+          "request": {
+            "name": "Get a creator by URL name",
+            "description": {
+              "content": "Retrieves a creator by their unique URL name.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "public",
+                "creators",
+                "getCreator"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "urlName",
+                  "value": "<string>",
+                  "description": "(Required) The unique URL name of the creator (e.g. defne-mustecaplioglu)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b7bf47f4-d950-4f91-a612-36d0225f2b85",
+              "name": "Creator found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "public",
+                    "creators",
+                    "getCreator"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "urlName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"creatorPageUrl\": \"https://www.indiegogo.com/creators/defne-mustecaplioglu\",\n  \"description\": null,\n  \"name\": \"Defne Mustecaplioglu\",\n  \"thumbImageUrl\": \"https://cdn.images.indiegogo.com/smallthumb/noimage.jpg\",\n  \"urlName\": \"defne-mustecaplioglu\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "473a3401-280a-43a5-9802-fb0fc3cd6a40",
+              "name": "The urlName parameter was not provided or was invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "public",
+                    "creators",
+                    "getCreator"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "urlName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"message\": \"URL name was not provided.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.indiegogo.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2fab5b62-305e-4bae-9514-3790c87ad297",
+    "name": "Indiegogo Public Creators API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Indiegogo Public API exposes read-only, unauthenticated endpoints for retrieving creators and active crowdfunding projects from the Indiegogo platform. Responses are cached for a short duration. This specification was harvested by the API Evangelist enrichment pipeline directly from the live endpoints at https://www.indiegogo.com/api/public and the published documentation at https://help.indiegogo.com/article/616-indiegogo-public-api; schemas reflect real observed responses.\n\nContact Support:\n Name: Indiegogo Developer Resources",
+      "type": "text/plain"
+    }
+  }
+}

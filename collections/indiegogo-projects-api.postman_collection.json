@@ -1,0 +1,239 @@
+{
+  "item": [
+    {
+      "id": "5d55ed6f-c946-48c0-a2ef-469843088cf5",
+      "name": "Projects",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4fd2e028-b6bb-4db3-8767-afac65e328d5",
+          "name": "List active crowdfunding projects",
+          "request": {
+            "name": "List active crowdfunding projects",
+            "description": {
+              "content": "Retrieves a list of active crowdfunding projects, ordered by campaign start date. Results are cached for a short duration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "public",
+                "projects",
+                "getActiveCrowdfundingProjects"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5c921c96-d122-49c0-964f-41e6ec6e6436",
+              "name": "An array of active crowdfunding projects.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "public",
+                    "projects",
+                    "getActiveCrowdfundingProjects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"projectName\": \"string\",\n    \"projectUrlName\": \"string\",\n    \"shortDescription\": \"string\",\n    \"projectType\": 3090,\n    \"projectHomeUrl\": \"https://WaeHgE.hjszG959h+YraMRpAgKB5DgUU9V2MWywvzFMSllMri8qp6MW3D+dOKdzdOZh0ut3qATAd0sSuk9oblH\",\n    \"projectImageUrl\": \"http://SaOBdeN.ipycbz-5qWSfkU,0KDZxtI\",\n    \"creatorName\": \"string\",\n    \"creatorUrlName\": \"string\",\n    \"campaignGoal\": 8319.406792224934,\n    \"fundsGathered\": 4917.00910045683,\n    \"currencyShortName\": \"string\",\n    \"campaignStartDate\": \"1976-12-20T07:28:02.362Z\",\n    \"campaignEndDate\": \"2023-10-30T11:33:35.534Z\",\n    \"backerCount\": 5143,\n    \"rewardCount\": 4969,\n    \"commentCount\": 2896,\n    \"updateCount\": 591\n  },\n  {\n    \"projectName\": \"string\",\n    \"projectUrlName\": \"string\",\n    \"shortDescription\": \"string\",\n    \"projectType\": 1145,\n    \"projectHomeUrl\": \"https://HYYEKuYgdIMczlvzanOUwpmDdZfK.tdxBf4zLGakbxYGjezRemZkAgP53YjRoJMN.xro+hmME,0fRIsU4TzRYFLDz0Rzg7ULbTMEwUMBz\",\n    \"projectImageUrl\": \"https://nBAI.bpdENHbADvd+eCc4VhmGfKlVda1Nc0hnSAzaaqjCZDOL\",\n    \"creatorName\": \"string\",\n    \"creatorUrlName\": \"string\",\n    \"campaignGoal\": 2334.8032786239737,\n    \"fundsGathered\": 3172.5387230522806,\n    \"currencyShortName\": \"string\",\n    \"campaignStartDate\": \"1969-03-04T18:29:49.286Z\",\n    \"campaignEndDate\": \"1981-01-15T09:57:12.364Z\",\n    \"backerCount\": 5016,\n    \"rewardCount\": 9422,\n    \"commentCount\": 4872,\n    \"updateCount\": 8924\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "99ea878a-8259-4c7e-89a2-067a7d308324",
+          "name": "Get a crowdfunding project by URL name",
+          "request": {
+            "name": "Get a crowdfunding project by URL name",
+            "description": {
+              "content": "Retrieves a single crowdfunding project by its unique URL name.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "public",
+                "projects",
+                "getCrowdfundingProject"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "urlName",
+                  "value": "<string>",
+                  "description": "(Required) The unique URL name of the project (e.g. olive--lemon)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5c686657-6372-4ece-af1d-779b04b3ecf1",
+              "name": "Project found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "public",
+                    "projects",
+                    "getCrowdfundingProject"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "urlName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"projectName\": \"string\",\n  \"projectUrlName\": \"string\",\n  \"shortDescription\": \"string\",\n  \"projectType\": 4682,\n  \"projectHomeUrl\": \"https://ZyVAEExytwWBrjhYoTmIQHvYUIMo.esgBgWv-Woeq5HxSOWX3Ho-QSMoNh,Hh6ObuEZJDZTvJ,qScJEIref,gwH.V3czif.hX.bEcBo\",\n  \"projectImageUrl\": \"https://LrVDjzAbbIFViXPkvWhj.mrbfb7WCbRJsoGXBy1L.vX7h7rw7auGGPASRoO3zOlQkNaO9O0qXXp9b-PEl4Ujv\",\n  \"creatorName\": \"string\",\n  \"creatorUrlName\": \"string\",\n  \"campaignGoal\": 5853.278923616406,\n  \"fundsGathered\": 5097.545889799706,\n  \"currencyShortName\": \"string\",\n  \"campaignStartDate\": \"2013-06-02T07:45:01.165Z\",\n  \"campaignEndDate\": \"1966-09-19T10:26:09.600Z\",\n  \"backerCount\": 4837,\n  \"rewardCount\": 4092,\n  \"commentCount\": 5259,\n  \"updateCount\": 7163\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bc74f7a4-0728-4f83-aa75-7d70c588ccf5",
+              "name": "The urlName parameter was not provided or was invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "public",
+                    "projects",
+                    "getCrowdfundingProject"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "urlName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.indiegogo.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3b258f99-8502-448d-9c9c-d4280e5c1726",
+    "name": "Indiegogo Public Creators Projects API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Indiegogo Public API exposes read-only, unauthenticated endpoints for retrieving creators and active crowdfunding projects from the Indiegogo platform. Responses are cached for a short duration. This specification was harvested by the API Evangelist enrichment pipeline directly from the live endpoints at https://www.indiegogo.com/api/public and the published documentation at https://help.indiegogo.com/article/616-indiegogo-public-api; schemas reflect real observed responses.\n\nContact Support:\n Name: Indiegogo Developer Resources",
+      "type": "text/plain"
+    }
+  }
+}
