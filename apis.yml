@@ -69,6 +69,8 @@ apis:
   humanURL: https://help.indiegogo.com/article/616-indiegogo-public-api
   baseURL: https://www.indiegogo.com/api/public
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
