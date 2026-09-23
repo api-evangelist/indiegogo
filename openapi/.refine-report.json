@@ -1,8 +1,7 @@
 {
   "provider": "indiegogo",
   "sources": [
-    "indiegogo-creators-api-openapi.yml",
-    "indiegogo-projects-api-openapi.yml"
+    "_original/indiegogo-public-openapi.yml"
   ],
   "outputs": [
     "indiegogo-creators-api-openapi.yml",
@@ -11,6 +10,15 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "indiegogo-public-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "indiegogo-public-openapi.yml: declared missing tag: Creators",
+    "indiegogo-public-openapi.yml: declared missing tag: Projects",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "indiegogo-creators-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "indiegogo-projects-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Indiegogo Public Creators API
   version: '1.0'
@@ -51,18 +51,6 @@ paths:
                 message: URL name was not provided.
 components:
   schemas:
-    Error:
-      type: object
-      description: Error envelope returned on a 400 response.
-      properties:
-        success:
-          type: boolean
-          example: false
-        message:
-          type: string
-      required:
-      - success
-      - message
     Creator:
       type: object
       description: A campaign creator on Indiegogo.
@@ -81,3 +69,15 @@ components:
         thumbImageUrl:
           type: string
           format: uri
+    Error:
+      type: object
+      description: Error envelope returned on a 400 response.
+      properties:
+        success:
+          type: boolean
+          example: false
+        message:
+          type: string
+      required:
+      - success
+      - message

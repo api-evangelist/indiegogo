@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Indiegogo Public Creators Projects API
+  title: Indiegogo Public Projects API
   version: '1.0'
   description: The Indiegogo Public API exposes read-only, unauthenticated endpoints for retrieving creators and active crowdfunding projects from the Indiegogo platform. Responses are cached for a short duration. This specification was harvested by the API Evangelist enrichment pipeline directly from the live endpoints at https://www.indiegogo.com/api/public and the published documentation at https://help.indiegogo.com/article/616-indiegogo-public-api; schemas reflect real observed responses.
   contact:
