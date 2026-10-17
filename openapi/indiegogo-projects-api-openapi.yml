@@ -58,6 +58,18 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
+    Error:
+      type: object
+      description: Error envelope returned on a 400 response.
+      properties:
+        success:
+          type: boolean
+          example: false
+        message:
+          type: string
+      required:
+      - success
+      - message
     Project:
       type: object
       description: A crowdfunding project (campaign) on Indiegogo.
@@ -102,15 +114,3 @@ components:
           type: integer
         updateCount:
           type: integer
-    Error:
-      type: object
-      description: Error envelope returned on a 400 response.
-      properties:
-        success:
-          type: boolean
-          example: false
-        message:
-          type: string
-      required:
-      - success
-      - message
